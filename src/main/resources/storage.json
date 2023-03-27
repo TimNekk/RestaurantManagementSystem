@@ -1,0 +1,93 @@
+[
+    {
+        "ingredient": {
+            "id": 1,
+            "name": "flour"
+        },
+        "amount": 100
+    },
+    {
+        "ingredient": {
+            "id": 2,
+            "name": "salt"
+        },
+        "amount": 100
+    },
+    {
+        "ingredient": {
+            "id": 3,
+            "name": "pepper"
+        },
+        "amount": 100
+    },
+    {
+        "ingredient": {
+            "id": 4,
+            "name": "egg"
+        },
+        "amount": 100
+    },
+    {
+        "ingredient": {
+            "id": 5,
+            "name": "tomato"
+        },
+        "amount": 100
+    },
+    {
+        "ingredient": {
+            "id": 6,
+            "name": "basil"
+        },
+        "amount": 100
+    },
+    {
+        "ingredient": {
+            "id": 7,
+            "name": "cheese"
+        },
+        "amount": 100
+    },
+    {
+        "ingredient": {
+            "id": 8,
+            "name": "pepperoni"
+        },
+        "amount": 100
+    },
+    {
+        "ingredient": {
+            "id": 9,
+            "name": "milk"
+        },
+        "amount": 100
+    },
+    {
+        "ingredient": {
+            "id": 10,
+            "name": "sugar"
+        },
+        "amount": 100
+    },
+    {
+        "ingredient": {
+            "id": 11,
+            "name": "oil"
+        },
+        "amount": 100
+    },
+    {
+        "ingredient": {
+            "id": 12,
+            "name": "meat"
+        },
+        "amount": 100
+    },
+    {
+        "ingredient": {
+            "id": 13,
+            "name": "onion"
+        },
+        "amount": 100
+    }
+]

@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "Pizza",
+        "recipe": {
+            "id": 1,
+            "operations": [
+                {
+                    "type": "MIXING",
+                    "duration": "PT3S",
+                    "ingredientIds": [1, 2, 3, 4]
+                },
+                {
+                    "type": "MIXING",
+                    "duration": "PT2S",
+                    "ingredientIds": [2, 3, 5, 6]
+                },
+                {
+                    "type": "PUTTING",
+                    "duration": "PT1S",
+                    "ingredientIds": [7, 8]
+                },
+                {
+                    "type": "BAKING",
+                    "duration": "PT3S",
+                    "ingredientIds": []
+                }
+            ]
+        },
+        "price": 10
+    },
+    {
+        "id": 2,
+        "name": "Pancake with meat",
+        "recipe": {
+            "id": 2,
+            "operations": [
+                {
+                    "type": "MIXING",
+                    "duration": "PT2S",
+                    "ingredientIds": [4, 10, 11, 9, 1]
+                },
+                {
+                    "type": "FRYING",
+                    "duration": "PT3S",
+                    "ingredientIds": [11]
+                },
+                {
+                    "type": "CUTTING",
+                    "duration": "PT1S",
+                    "ingredientIds": [12]
+                },
+                {
+                    "type": "MIXING",
+                    "duration": "PT2S",
+                    "ingredientIds": [3, 2, 13]
+                },
+                {
+                    "type": "FRYING",
+                    "duration": "PT3S",
+                    "ingredientIds": [11]
+                },
+                {
+                    "type": "ASSEMBLING",
+                    "duration": "PT1S",
+                    "ingredientIds": []
+                }
+            ]
+        },
+        "price": 20
+    }
+]
