@@ -1,5 +1,7 @@
 package tmy.models;
 
+import java.io.IOException;
+
 public final class IngredientBox {
     private Ingredient ingredient;
     private int amount;
@@ -31,9 +33,9 @@ public final class IngredientBox {
     /**
      * Reduces the amount of the ingredient in the box.
      * @param amount the amount to reduce by.
+     * @throws IllegalArgumentException if there are not enough ingredients in the box.
      */
-    // TODO throws exception
-    public void reduceAmount(int amount) {
+    public void reduceAmount(int amount) throws IllegalArgumentException {
         if (this.amount - amount < 0) {
             throw new IllegalArgumentException("Amount of ingredient will be less than 0");
         }
