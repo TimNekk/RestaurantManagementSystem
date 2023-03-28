@@ -17,6 +17,9 @@ public final class Restaurant {
         this.manager = manager;
     }
 
+    /**
+     * Tells the manager to assign orders to the chiefs.
+     */
     public void run() {
         List<Order> orders = getOrders();
 
@@ -30,6 +33,10 @@ public final class Restaurant {
         }
     }
 
+    /**
+     * Gets orders from all the customers and logs the approximate waiting time of the order.
+     * @return all orders.
+     */
     private List<Order> getOrders() {
         List<Order> orders = new ArrayList<>();
         for (Customer customer : customers) {
