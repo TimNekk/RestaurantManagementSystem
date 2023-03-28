@@ -3,10 +3,10 @@ package tmy.models;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
+
+import tmy.utils.LoggerUtility;
 
 public final class Restaurant {
-    private final Logger logger = Logger.getLogger(Restaurant.class.getName());
     private final List<Customer> customers;
     private final Menu menu;
     private final Manager manager;
@@ -27,7 +27,8 @@ public final class Restaurant {
             try {
                 manager.assignOrder(order);
             } catch (InterruptedException e) {
-                logger.severe(e.getMessage());
+                LoggerUtility.severe(e.getMessage());
+                Thread.currentThread().interrupt();
             }
 
         }
@@ -46,9 +47,10 @@ public final class Restaurant {
             orders.add(order);
 
             Duration duration = orders.stream().map(Order::getDuration).reduce(Duration.ZERO, Duration::plus);
-            logger.info("Customer " + customer.getName() + " ordered "
-                    + order.getDishes().stream().map(Dish::getName).reduce((a, b) -> a + ", " + b).orElse("")
-                    + ". In worst case it will take " + duration.toSeconds() + " s.");
+            LoggerUtility.info("Customer {0} ordered {1}. In worst case it will take {2} s.",
+                    customer.getName(),
+                    order.getDishes().stream().map(Dish::getName).reduce((a, b) -> a + ", " + b).orElse(""),
+                    duration.toSeconds());
 
         }
         return orders;

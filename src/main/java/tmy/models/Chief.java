@@ -3,13 +3,13 @@ package tmy.models;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.logging.Logger;
+
+import tmy.utils.LoggerUtility;
 
 /**
  * A model that cooks the dishes.
  */
 public final class Chief {
-    private final Logger logger = Logger.getLogger(Chief.class.getName());
     private final int id;
     private final IngredientStorage storage;
     private boolean isCooking = false;
@@ -62,7 +62,7 @@ public final class Chief {
      * @throws InterruptedException  if the thread was interrupted.
      */
     public void cook(Dish dish) throws IllegalStateException, InterruptedException {
-        logger.info("Chief #" + id + " started cooking " + dish.getName());
+        LoggerUtility.info("Chief #{0} is getting ingredients for {1}", id, dish.getName());
 
         for (Operation operation : dish.getRecipe().getOperations()) {
             List<Ingredient> ingredients = new ArrayList<>(operation.getIngredientIds().size());
@@ -84,12 +84,12 @@ public final class Chief {
                     .reduce((s1, s2) -> s1 + ", " + s2)
                     .orElse("");
 
-            logger.info(
-                    "Chief #" + id + " is " + operation.getType().toString().toLowerCase() + " " + ingredientsString);
+            LoggerUtility.info("Chief #{0} is {1} {2}",
+                    id, operation.getType().toString().toLowerCase(), ingredientsString);
             Thread.sleep(operation.getDuration().toMillis());
         }
 
         setCooking(false);
-        logger.info("Chief #" + id + " finished cooking " + dish.getName());
+        LoggerUtility.info("Chief #{0} is returning ingredients for {1}", id, dish.getName());
     }
 }

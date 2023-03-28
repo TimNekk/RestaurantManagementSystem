@@ -3,7 +3,6 @@ package tmy;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
-import java.util.logging.Logger;
 
 import tmy.models.Chief;
 import tmy.models.ChiefAmount;
@@ -15,9 +14,9 @@ import tmy.models.Manager;
 import tmy.models.Menu;
 import tmy.models.Restaurant;
 import tmy.utils.JsonFileReader;
+import tmy.utils.LoggerUtility;
 
 public class Main {
-    private static final Logger logger = Logger.getLogger(Main.class.getName());
     private static final ClassLoader classLoader = Main.class.getClassLoader();
 
     public static void main(String[] args) {
@@ -25,7 +24,7 @@ public class Main {
         try {
             restaurant = createRestaurant();
         } catch (IOException e) {
-            logger.severe(e.getMessage());
+            LoggerUtility.severe(e.getMessage());
             return;
         }
         restaurant.run();

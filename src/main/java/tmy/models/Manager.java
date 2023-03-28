@@ -2,10 +2,10 @@ package tmy.models;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
+
+import tmy.utils.LoggerUtility;
 
 public final class Manager {
-    private final Logger logger = Logger.getLogger(Manager.class.getName());
     private final List<Chief> chiefs = new ArrayList<>();
 
     public void addChief(Chief chief) {
@@ -28,22 +28,26 @@ public final class Manager {
             while (true) {
                 Chief chief = getFreeChief();
 
-                if (chief != null) {
-                    logger.info("Order for " + order.getCustomer().getName() + " is assigned to the chief #"
-                            + chief.getChiefId());
-
-                    chief.setCooking(true);
-                    new Thread(() -> {
-                        try {
-                            chief.cook(dish);
-                        } catch (IllegalStateException | InterruptedException e) {
-                            logger.severe(e.getMessage());
-                        }
-                    }).start();
-                    break;
+                if (chief == null) {
+                    Thread.sleep(100);
+                    continue;
                 }
 
-                Thread.sleep(100);
+                LoggerUtility.info("Order for {0} is assigned to the chief #{1}", order.getCustomer().getName(),
+                        chief.getChiefId());
+
+                chief.setCooking(true);
+                new Thread(() -> {
+                    try {
+                        chief.cook(dish);
+                    } catch (InterruptedException e) {
+                        LoggerUtility.severe(e.getMessage());
+                        Thread.currentThread().interrupt();
+                    } catch (IllegalStateException e) {
+                        LoggerUtility.warning(e.getMessage());
+                    }
+                }).start();
+                break;
             }
         }
     }

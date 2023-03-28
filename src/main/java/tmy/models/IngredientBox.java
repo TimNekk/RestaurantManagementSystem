@@ -1,7 +1,5 @@
 package tmy.models;
 
-import java.io.IOException;
-
 public final class IngredientBox {
     private Ingredient ingredient;
     private int amount;
