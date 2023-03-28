@@ -5,29 +5,56 @@ import java.util.List;
 import java.util.Optional;
 import java.util.logging.Logger;
 
+/**
+ * A model that cooks the dishes.
+ */
 public final class Chief {
     private final Logger logger = Logger.getLogger(Chief.class.getName());
     private final int id;
     private final IngredientStorage storage;
     private boolean isCooking = false;
 
+    /**
+     * Constructs {@code Chief} instance.
+     * @param id id of the Chief.
+     * @param ingredientStorage the storage that Chief gets the ingredients from.
+     */
     public Chief(int id, IngredientStorage ingredientStorage) {
         this.id = id;
         this.storage = ingredientStorage;
     }
 
+    /**
+     * Gets the value of the {@code id} field.
+     * @return id value.
+     */
     public int getChiefId() {
         return id;
     }
 
+    /**
+     * Gets the value of the {@code isCooking} field.
+     * @return {@code True} if the Chief is cooking, {@code False} otherwise.
+     */
     public synchronized boolean isCooking() {
         return isCooking;
     }
 
+    /**
+     * Sets the value of {@code isCooking} field.
+     * @param cooking is the Chief cooking right now.
+     */
     public synchronized void setCooking(boolean cooking) {
         isCooking = cooking;
     }
 
+    /**
+     * Cooks the dish by going through the needed operations and getting the needed
+     * ingredients from the storage.
+     * @param dish dish to cook.
+     * @throws IllegalStateException if the {@code IngredientStorage} doesn't have enough ingredients for the dish.
+     * @throws InterruptedException if the thread was interrupted.
+     */
     public void cook(Dish dish) throws IllegalStateException, InterruptedException {
         logger.info("Chief #" + id + " started cooking " + dish.getName());
 

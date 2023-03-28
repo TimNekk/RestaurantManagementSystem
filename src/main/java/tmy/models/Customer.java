@@ -10,10 +10,19 @@ public final class Customer {
     private static final int MAX_AMOUNT_OF_DISHES = 3;
     private final Random random = new Random();
 
+    /**
+     * Gets the name field value.
+     * @return name of the customer.
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Makes an {@code Order} for the customer, randomly choosing dishes from the menu.
+     * @param menu menu to choose dishes from
+     * @return customer's order.
+     */
     public Order chooseDishes(Menu menu) {
         List<Dish> dishes = menu.getDishes();
 

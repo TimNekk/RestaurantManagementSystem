@@ -12,6 +12,12 @@ public final class Manager {
         chiefs.add(chief);
     }
 
+    /**
+     * Assigns all the dishes from an order to the chiefs. If the free chief is found, creates a new thread in which the
+     * chief cooks the dish. If there are no available chiefs, waits until the chief have been found.
+     * @param order dishes to cook.
+     * @throws InterruptedException if the thread have been interrupted.
+     */
     public void assignOrder(Order order) throws InterruptedException {
         List<Dish> requestedDishes = order.getDishes();
 
@@ -39,6 +45,10 @@ public final class Manager {
         }
     }
 
+    /**
+     * Gets the first available chief.
+     * @return the available chief.
+     */
     private Chief getFreeChief() {
         return chiefs.stream()
                 .filter(chief -> !chief.isCooking())

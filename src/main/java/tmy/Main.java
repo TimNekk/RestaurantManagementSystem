@@ -31,6 +31,11 @@ public class Main {
         restaurant.run();
     }
 
+    /**
+     * Reads the info from .json files and creates the restaurant instance.
+     * @return restaurant.
+     * @throws IOException if there was a problem while reading the file.
+     */
     private static Restaurant createRestaurant() throws IOException {
         List<Customer> customers = JsonFileReader.getCustomers(getResourcePath("customers.json"));
         List<Dish> dishes = JsonFileReader.getDishes(getResourcePath("dishes.json"));
@@ -41,6 +46,12 @@ public class Main {
         return new Restaurant(customers, new Menu(dishes), manager);
     }
 
+    /**
+     * Creates a manager and chiefs under his command.
+     * @param ingredientBoxes boxes to get ingredients from.
+     * @param amountOfChiefs amount of chiefs at the restaurant.
+     * @return manager.
+     */
     private static Manager createManager(List<IngredientBox> ingredientBoxes, int amountOfChiefs) {
         IngredientStorage storage = new IngredientStorage(ingredientBoxes);
         Manager manager = new Manager();

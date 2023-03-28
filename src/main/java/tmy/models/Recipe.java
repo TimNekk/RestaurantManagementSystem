@@ -11,6 +11,10 @@ public final class Recipe {
         return id;
     }
 
+    /**
+     * Sums all the operations duration and gets the overall duration to cook the dish.
+     * @return duration of dish cooking.
+     */
     public Duration getCookingTime() {
         return operations.stream()
                 .map(Operation::getDuration)

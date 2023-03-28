@@ -20,10 +20,19 @@ public final class IngredientBox {
         return amount;
     }
 
+    /**
+     * Adds the amount of the ingredient to the box.
+     * @param amount amount to be added.
+     */
     public void addAmount(int amount) {
         this.amount += amount;
     }
 
+    /**
+     * Reduces the amount of the ingredient in the box.
+     * @param amount the amount to reduce by.
+     */
+    // TODO throws exception
     public void reduceAmount(int amount) {
         if (this.amount - amount < 0) {
             throw new IllegalArgumentException("Amount of ingredient will be less than 0");
