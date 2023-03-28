@@ -21,7 +21,9 @@ public final class Order {
     }
 
     /**
-     * Sums all the dish cooking duration at the order and gets the overall duration to cook all the dishes in the order.
+     * Sums all the dish cooking duration at the order and gets the overall duration
+     * to cook all the dishes in the order.
+     * 
      * @return duration of order cooking.
      */
     public Duration getDuration() {

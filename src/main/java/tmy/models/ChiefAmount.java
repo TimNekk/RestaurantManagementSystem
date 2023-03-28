@@ -8,6 +8,7 @@ public final class ChiefAmount {
 
     /**
      * Gets the value of the {@code amount} field.
+     * 
      * @return amount value.
      */
     public int getAmount() {

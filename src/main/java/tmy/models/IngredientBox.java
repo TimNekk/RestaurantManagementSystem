@@ -24,6 +24,7 @@ public final class IngredientBox {
 
     /**
      * Adds the amount of the ingredient to the box.
+     * 
      * @param amount amount to be added.
      */
     public void addAmount(int amount) {
@@ -32,8 +33,10 @@ public final class IngredientBox {
 
     /**
      * Reduces the amount of the ingredient in the box.
+     * 
      * @param amount the amount to reduce by.
-     * @throws IllegalArgumentException if there are not enough ingredients in the box.
+     * @throws IllegalArgumentException if there are not enough ingredients in the
+     *                                  box.
      */
     public void reduceAmount(int amount) throws IllegalArgumentException {
         if (this.amount - amount < 0) {

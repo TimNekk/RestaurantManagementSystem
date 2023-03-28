@@ -12,6 +12,7 @@ public final class Customer {
 
     /**
      * Gets the name field value.
+     * 
      * @return name of the customer.
      */
     public String getName() {
@@ -19,7 +20,9 @@ public final class Customer {
     }
 
     /**
-     * Makes an {@code Order} for the customer, randomly choosing dishes from the menu.
+     * Makes an {@code Order} for the customer, randomly choosing dishes from the
+     * menu.
+     * 
      * @param menu menu to choose dishes from
      * @return customer's order.
      */

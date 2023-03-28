@@ -33,6 +33,7 @@ public class Main {
 
     /**
      * Reads the info from .json files and creates the restaurant instance.
+     * 
      * @return restaurant.
      * @throws IOException if there was a problem while reading the file.
      */
@@ -48,8 +49,9 @@ public class Main {
 
     /**
      * Creates a manager and chiefs under his command.
+     * 
      * @param ingredientBoxes boxes to get ingredients from.
-     * @param amountOfChiefs amount of chiefs at the restaurant.
+     * @param amountOfChiefs  amount of chiefs at the restaurant.
      * @return manager.
      */
     private static Manager createManager(List<IngredientBox> ingredientBoxes, int amountOfChiefs) {

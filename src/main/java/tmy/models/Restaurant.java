@@ -34,7 +34,9 @@ public final class Restaurant {
     }
 
     /**
-     * Gets orders from all the customers and logs the approximate waiting time of the order.
+     * Gets orders from all the customers and logs the approximate waiting time of
+     * the order.
+     * 
      * @return all orders.
      */
     private List<Order> getOrders() {

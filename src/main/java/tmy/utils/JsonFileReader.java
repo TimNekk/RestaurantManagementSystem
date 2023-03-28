@@ -22,6 +22,7 @@ public final class JsonFileReader {
 
     /**
      * Gets the list of customers from the stream.
+     * 
      * @param inputStream the stream to read from.
      * @return list of customers.
      * @throws IOException if there was a problem while reading from input stream.
@@ -33,6 +34,7 @@ public final class JsonFileReader {
 
     /**
      * Gets the list of dishes from the stream.
+     * 
      * @param inputStream the stream to read from.
      * @return list of dishes.
      * @throws IOException if there was a problem while reading from input stream.
@@ -44,6 +46,7 @@ public final class JsonFileReader {
 
     /**
      * Gets the list of ingredient boxes from the stream.
+     * 
      * @param inputStream the stream to read from.
      * @return list of ingredient boxes.
      * @throws IOException if there was a problem while reading from input stream.
@@ -55,6 +58,7 @@ public final class JsonFileReader {
 
     /**
      * Gets amount of chiefs in the restaurant from the stream.
+     * 
      * @param inputStream the stream to read from.
      * @return amount of chiefs.
      * @throws IOException if there was a problem while reading from input stream.

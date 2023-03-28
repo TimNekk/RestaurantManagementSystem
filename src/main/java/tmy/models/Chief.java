@@ -16,7 +16,8 @@ public final class Chief {
 
     /**
      * Constructs {@code Chief} instance.
-     * @param id id of the Chief.
+     * 
+     * @param id                id of the Chief.
      * @param ingredientStorage the storage that Chief gets the ingredients from.
      */
     public Chief(int id, IngredientStorage ingredientStorage) {
@@ -26,6 +27,7 @@ public final class Chief {
 
     /**
      * Gets the value of the {@code id} field.
+     * 
      * @return id value.
      */
     public int getChiefId() {
@@ -34,6 +36,7 @@ public final class Chief {
 
     /**
      * Gets the value of the {@code isCooking} field.
+     * 
      * @return {@code True} if the Chief is cooking, {@code False} otherwise.
      */
     public synchronized boolean isCooking() {
@@ -42,6 +45,7 @@ public final class Chief {
 
     /**
      * Sets the value of {@code isCooking} field.
+     * 
      * @param cooking is the Chief cooking right now.
      */
     public synchronized void setCooking(boolean cooking) {
@@ -51,9 +55,11 @@ public final class Chief {
     /**
      * Cooks the dish by going through the needed operations and getting the needed
      * ingredients from the storage.
+     * 
      * @param dish dish to cook.
-     * @throws IllegalStateException if the {@code IngredientStorage} doesn't have enough ingredients for the dish.
-     * @throws InterruptedException if the thread was interrupted.
+     * @throws IllegalStateException if the {@code IngredientStorage} doesn't have
+     *                               enough ingredients for the dish.
+     * @throws InterruptedException  if the thread was interrupted.
      */
     public void cook(Dish dish) throws IllegalStateException, InterruptedException {
         logger.info("Chief #" + id + " started cooking " + dish.getName());
